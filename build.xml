@@ -113,4 +113,11 @@
     <target name="describeMetadata">
       <sf:describeMetadata username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}"/>
     </target>
+    <! — Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged and run tests in this organization’s namespace only →
+
+<target name=”deployall”>
+
+<sf:deploy username=”${sf.username}” password=”${sf.password}” serverurl=”${sf.serverurl}” testlevel=”NoTestRun” logtype=”Detail” deployRoot=”force-app”/>
+
+</target>
 </project>
